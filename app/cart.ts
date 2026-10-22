@@ -12,9 +12,9 @@ export function writeCart(cart: CartState) {
   window.dispatchEvent(new Event("archives-cart-updated"));
 }
 
-export function addProductToCart(id: number, size?: string) {
+export function addProductToCart(id: number, size?: string, color?: string) {
   const cart = readCart();
-  const key = size ? `${id}:${size}` : String(id);
+  const key = [id, size || "", color || ""].join(":");
   cart[key] = (cart[key] || 0) + 1;
   writeCart(cart);
 }

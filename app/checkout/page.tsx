@@ -16,9 +16,9 @@ export default function CheckoutPage() {
   useEffect(() => { const sync = () => setCart(readCart()); sync(); window.addEventListener("archives-cart-updated", sync); return () => window.removeEventListener("archives-cart-updated", sync); }, []);
 
   const items = useMemo(() => Object.entries(cart).flatMap(([key, quantity]) => {
-    const [id, size] = key.split(":");
+    const [id, size, color] = key.split(":");
     const product = products.find((item) => item.id === Number(id));
-    return product ? [{ key, product, quantity, size }] : [];
+    return product ? [{ key, product, quantity, size, color }] : [];
   }), [cart]);
   const subtotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
   const completeOrder = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSubmitted(true); };
