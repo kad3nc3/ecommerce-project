@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { readCart, type CartState } from "../cart";
+import { getCartStockIssues, getCartSubtotal, MAX_CART_SUBTOTAL, readCart, type CartState } from "../cart";
 import { products } from "../../products";
 
 const inputClass = "w-full rounded-[14px] border border-[#1e2341]/10 bg-white/85 px-4 py-3.5 text-sm text-[#171b2e] shadow-sm outline-none transition placeholder:text-[#858895] focus:border-[#8993d7] focus:ring-2 focus:ring-[#8993d7]/20";
@@ -20,8 +20,10 @@ export default function CheckoutPage() {
     const product = products.find((item) => item.id === Number(id));
     return product ? [{ key, product, quantity, size, color }] : [];
   }), [cart]);
-  const subtotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-  const completeOrder = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setSubmitted(true); };
+  const subtotal = getCartSubtotal(cart);
+  const stockIssues = getCartStockIssues(cart);
+  const overCartLimit = subtotal > MAX_CART_SUBTOTAL;
+  const completeOrder = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); if (!stockIssues.length && !overCartLimit) setSubmitted(true); };
 
   if (!items.length) return <main className="grid min-h-screen place-items-center bg-gradient-to-br from-[#fbfaf6] via-[#f4f3f8] to-[#e9ecf9] px-6 text-[#171b2e]"><div className="text-center"><p className="text-[10px] font-bold uppercase tracking-[2px] text-[#8a8e9e]">Archives checkout</p><h1 className="mt-4 font-serif text-5xl">Your bag is empty.</h1><Link href="/#shop" className="mt-8 inline-flex rounded-[14px] bg-[#171b2e] px-6 py-4 text-xs font-semibold text-white">Return to the collection</Link></div></main>;
 
@@ -39,8 +41,10 @@ export default function CheckoutPage() {
 
         <section><h2 className="mb-4 text-base font-medium">Billing address</h2><div className="overflow-hidden rounded-[16px] border border-[#1e2341]/10 bg-white/85 text-[#171b2e] shadow-sm"><label className="flex cursor-pointer items-center gap-3 border-b border-black/10 px-4 py-4 text-sm"><input defaultChecked type="radio" name="billing" className="h-4 w-4 accent-[#171b2e]" />Same as shipping address</label><label className="flex cursor-pointer items-center gap-3 px-4 py-4 text-sm"><input type="radio" name="billing" className="h-4 w-4 accent-[#171b2e]" />Use a different billing address</label></div></section>
 
+        {stockIssues.length > 0 && <div role="alert" className="rounded-[14px] border border-[#9b4a42]/20 bg-[#f8eded] p-4 text-sm text-[#9b4a42]">Some items exceed available stock. <Link href="/cart" className="underline underline-offset-4">Review your bag</Link> to adjust them.</div>}
+        {overCartLimit && <div role="alert" className="rounded-[14px] border border-[#9b4a42]/20 bg-[#f8eded] p-4 text-sm text-[#9b4a42]">The cart limit is ₱{MAX_CART_SUBTOTAL.toLocaleString()}. <Link href="/cart" className="underline underline-offset-4">Review your bag</Link> to reduce the subtotal.</div>}
         {submitted && <div role="status" className="rounded-[14px] border border-[#8993d7]/30 bg-[#8993d7]/10 p-4 text-sm text-[#4f5785]">Checkout design is ready. Connect a payment and order backend before accepting live orders.</div>}
-        <button type="submit" className="w-full rounded-[14px] bg-[#171b2e] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#303653]">Complete order</button>
+        <button type="submit" disabled={stockIssues.length > 0 || overCartLimit} className="w-full rounded-[14px] bg-[#171b2e] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#303653] disabled:cursor-not-allowed disabled:opacity-40">Complete order</button>
         <p className="text-center text-[11px] text-[#9296a5]">By continuing, you agree to the store terms and privacy policy.</p>
       </div>
 
