@@ -83,7 +83,7 @@ export default function AccountPage() {
   return (
     <main className="min-h-screen bg-[#f7f6f1] px-5 py-5 text-[#171b2e] sm:px-12 sm:py-8">
       <header className="mx-auto flex max-w-6xl items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 text-[17px] font-bold tracking-[-.5px]"><span className="brand-icon grid h-7 w-7 place-items-center rounded-[10px]" />archives<span className="font-normal text-[#9da1af]">/store</span></Link>
+        <Link href="/" className="flex items-center gap-2.5 text-[17px] font-bold tracking-[-.5px]"><span className="brand-icon grid h-7 w-7 place-items-center rounded-[10px]" />archives</Link>
         <Link href="/" className="text-xs text-[#777c91] transition-colors hover:text-[#171b2e]">← Back home</Link>
       </header>
 
@@ -104,13 +104,13 @@ export default function AccountPage() {
             </div>
           ) : (
             <>
-              <div className="mb-8 grid grid-cols-2 rounded-[14px] bg-[#ececf1] p-1 text-xs"><button type="button" onClick={() => { setMode("signin"); setMessage(""); }} className={`rounded-[11px] px-4 py-3 transition ${mode === "signin" ? "bg-white font-semibold shadow-sm" : "text-[#777c91]"}`}>Sign in</button><button type="button" onClick={() => { setMode("create"); setMessage(""); }} className={`rounded-[11px] px-4 py-3 transition ${mode === "create" ? "bg-white font-semibold shadow-sm" : "text-[#777c91]"}`}>Create account</button></div>
+              <div className="account-tabs mb-8 grid grid-cols-2 rounded-[14px] p-1 text-xs"><button type="button" onClick={() => { setMode("signin"); setMessage(""); }} className={`account-tab rounded-[11px] px-4 py-3 transition ${mode === "signin" ? "account-tab-active font-semibold" : ""}`}>Sign in</button><button type="button" onClick={() => { setMode("create"); setMessage(""); }} className={`account-tab rounded-[11px] px-4 py-3 transition ${mode === "create" ? "account-tab-active font-semibold" : ""}`}>Create account</button></div>
               <form onSubmit={submit} className="space-y-4">
-                {mode === "create" && <label className="block text-xs font-medium">Name<input required autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} className="mt-2 w-full rounded-[14px] border border-[#1e2341]/10 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#8993d7]" placeholder="Your name" /></label>}
-                <label className="block text-xs font-medium">Email<input required type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 w-full rounded-[14px] border border-[#1e2341]/10 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#8993d7]" placeholder="you@example.com" /></label>
-                <label className="block text-xs font-medium">Password<input required type="password" minLength={6} autoComplete={mode === "create" ? "new-password" : "current-password"} value={password} onChange={(event) => setPassword(event.target.value)} className="mt-2 w-full rounded-[14px] border border-[#1e2341]/10 bg-white px-4 py-3.5 text-sm outline-none transition focus:border-[#8993d7]" placeholder="At least 6 characters" /></label>
-                {message && <p role="alert" className="rounded-[12px] bg-[#f2e9e8] px-4 py-3 text-xs text-[#7d403a]">{message}</p>}
-                <button type="submit" className="w-full rounded-[14px] bg-[#171b2e] px-5 py-4 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#303653]">{mode === "signin" ? "Sign in" : "Create account"}</button>
+                {mode === "create" && <label className="block text-xs font-medium">Name<input required autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} className="account-input mt-2 w-full rounded-[14px] px-4 py-3.5 text-sm outline-none transition" placeholder="Your name" /></label>}
+                <label className="block text-xs font-medium">Email<input required type="email" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="account-input mt-2 w-full rounded-[14px] px-4 py-3.5 text-sm outline-none transition" placeholder="you@example.com" /></label>
+                <label className="block text-xs font-medium">Password<input required type="password" minLength={6} autoComplete={mode === "create" ? "new-password" : "current-password"} value={password} onChange={(event) => setPassword(event.target.value)} className="account-input mt-2 w-full rounded-[14px] px-4 py-3.5 text-sm outline-none transition" placeholder="At least 6 characters" /></label>
+                {message && <p role="alert" className="account-message rounded-[12px] px-4 py-3 text-xs">{message}</p>}
+                <button type="submit" className="liquid-button w-full rounded-[14px] px-5 py-4 text-xs font-semibold transition hover:-translate-y-0.5">{mode === "signin" ? "Sign in" : "Create account"}</button>
               </form>
               <p className="mt-5 text-center text-[10px] leading-5 text-[#9699a4]">Prototype account stored only in this browser. No raw password is saved.</p>
             </>

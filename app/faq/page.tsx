@@ -7,7 +7,7 @@ const questions = [
   },
   {
     question: "What sizes are available?",
-    answer: "Our apparel is currently offered from S to 2XL. Available sizes appear on each product page and must be selected before adding an item to your bag.",
+    answer: "Our apparel is currently offered from S to 2XL. Available sizes appear on each product page and must be selected before adding an item to your cart.",
   },
   {
     question: "How should I care for my clothes?",
@@ -45,7 +45,7 @@ export default function FAQPage() {
       <header className="mx-auto flex max-w-6xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 text-[17px] font-bold tracking-[-.5px]">
           <span className="brand-icon grid h-7 w-7 place-items-center rounded-[10px]" />
-          archives<span className="font-normal text-[#9da1af]">/store</span>
+          archives
         </Link>
         <Link href="/" className="text-xs text-[#777c91] transition-colors hover:text-[#171b2e]">← Back home</Link>
       </header>
@@ -72,7 +72,7 @@ export default function FAQPage() {
 
       <section className="mx-auto mb-8 flex max-w-6xl flex-col gap-5 rounded-[24px] bg-[#171b2e] px-7 py-8 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <div><p className="text-[10px] font-bold uppercase tracking-[1.8px] text-white/50">STILL NEED HELP?</p><h2 className="mt-2 text-2xl font-semibold tracking-[-1px]">Talk to Archives.</h2></div>
-        <Link href="/contact" className="w-fit rounded-[14px] bg-[#faf9ee] px-5 py-3 text-xs font-semibold text-[#171b2e] transition hover:-translate-y-0.5 hover:bg-white">Contact us</Link>
+        <Link href="/contact" className="liquid-button w-fit rounded-[14px] px-5 py-3 text-xs font-semibold transition hover:-translate-y-0.5">Contact us</Link>
       </section>
     </main>
   );
