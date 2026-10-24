@@ -1,0 +1,8 @@
+ ⨯ ./app/products/AddToBagButton.tsx
+Error: Failed to read source code from E:\e commerce proj\ecommerce-project\app\products\AddToBagButton.tsx
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./app/products/AddToBagButton.tsx

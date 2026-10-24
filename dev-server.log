@@ -9,3 +9,116 @@
  ✓ Ready in 4s
  ○ Compiling / ...
  ✓ Compiled / in 23.3s (503 modules)
+ GET / 200 in 26ms
+ GET / 200 in 48ms
+ ✓ Compiled in 349ms (503 modules)
+ GET / 200 in 99ms
+ ✓ Compiled /products/[slug] in 287ms (509 modules)
+ ✓ Compiled /cart in 179ms (515 modules)
+ ✓ Compiled in 428ms (513 modules)
+ GET / 200 in 89ms
+ GET / 200 in 65ms
+ ✓ Compiled in 308ms (513 modules)
+ ✓ Compiled in 111ms (266 modules)
+ ✓ Compiled in 97ms (266 modules)
+ ✓ Compiled in 170ms (499 modules)
+ ✓ Compiled /faq in 251ms (505 modules)
+ GET /faq 200 in 370ms
+ GET / 200 in 81ms
+ GET / 200 in 35ms
+ GET /faq 200 in 31ms
+ GET /faq 200 in 42ms
+ ✓ Compiled in 783ms (519 modules)
+ ✓ Compiled in 570ms (519 modules)
+ ✓ Compiled in 288ms (267 modules)
+ ✓ Compiled in 432ms (505 modules)
+ GET / 200 in 94ms
+ ✓ Compiled /contact in 212ms (507 modules)
+ GET /contact 200 in 279ms
+ GET /faq 200 in 97ms
+ GET /contact 200 in 47ms
+ ✓ Compiled in 467ms (521 modules)
+ ✓ Compiled in 888ms (521 modules)
+ GET / 200 in 80ms
+ GET /contact 200 in 74ms
+ GET /contact 200 in 64ms
+ GET /contact 200 in 68ms
+ ✓ Compiled in 681ms (521 modules)
+ ✓ Compiled in 188ms (267 modules)
+ ✓ Compiled in 164ms (267 modules)
+ ✓ Compiled in 218ms (507 modules)
+ ✓ Compiled /account in 478ms (513 modules)
+ GET /account 200 in 560ms
+ GET / 200 in 47ms
+ GET /account 200 in 30ms
+ GET / 200 in 53ms
+ GET /account 200 in 59ms
+ GET /account 200 in 55ms
+ ✓ Compiled in 482ms (527 modules)
+ ✓ Compiled in 275ms (527 modules)
+ ✓ Compiled in 168ms (269 modules)
+ ✓ Compiled in 131ms (269 modules)
+ ✓ Compiled in 380ms (527 modules)
+ ✓ Compiled in 289ms (527 modules)
+ ✓ Compiled in 647ms (527 modules)
+ ✓ Compiled in 257ms (527 modules)
+ ✓ Compiled in 375ms (527 modules)
+ ✓ Compiled in 111ms (267 modules)
+ ✓ Compiled in 62ms (254 modules)
+ ✓ Compiled in 133ms (507 modules)
+ ✓ Compiled in 137ms (267 modules)
+ ✓ Compiled /_not-found in 443ms (510 modules)
+ ✓ Compiled in 136ms (269 modules)
+ ✓ Compiled in 108ms (269 modules)
+ ✓ Compiled in 225ms (524 modules)
+ GET / 200 in 72ms
+ ✓ Compiled /products/[slug] in 138ms (269 modules)
+ GET /products/archives-shorts 200 in 255ms
+ GET /products/archives-iconic-tee 200 in 59ms
+ ✓ Compiled /cart in 238ms (530 modules)
+ GET /cart 200 in 324ms
+ ✓ Compiled /checkout in 258ms (536 modules)
+ GET /checkout 200 in 327ms
+ ○ Compiling /api/products ...
+ ✓ Compiled /api/products in 733ms (307 modules)
+ GET /api/products 200 in 1779ms
+ ✓ Compiled in 318ms (529 modules)
+ ✓ Compiled in 406ms (529 modules)
+ ✓ Compiled in 522ms (529 modules)
+ ✓ Compiled in 485ms (529 modules)
+ GET / 200 in 93ms
+ ✓ Compiled in 305ms (529 modules)
+ ✓ Compiled in 252ms (529 modules)
+ ✓ Compiled in 281ms (529 modules)
+ ✓ Compiled in 352ms (529 modules)
+ ✓ Compiled in 153ms (271 modules)
+ ✓ Compiled in 259ms (529 modules)
+ ✓ Compiled in 140ms (271 modules)
+ ✓ Compiled in 207ms (529 modules)
+ ✓ Compiled in 262ms (529 modules)
+ ✓ Compiled in 242ms (529 modules)
+ GET / 200 in 100ms
+ GET /cart 200 in 66ms
+ ✓ Compiled /checkout in 177ms (262 modules)
+ GET /checkout 200 in 265ms
+ ✓ Compiled /products/[slug] in 182ms (276 modules)
+ GET /products/archives-sakura-tee 200 in 411ms
+ ✓ Compiled /api/products in 104ms (306 modules)
+ GET /api/products 200 in 902ms
+ GET / 200 in 80ms
+ GET /api/products 200 in 7ms
+ ✓ Compiled in 366ms (560 modules)
+ ✓ Compiled in 289ms (529 modules)
+ ✓ Compiled /api/products in 66ms (289 modules)
+ GET /api/products 200 in 803ms
+ GET / 200 in 99ms
+ ✓ Compiled /products/[slug] in 156ms (302 modules)
+ GET /products/archives-doodle-set 200 in 948ms
+ GET /products/archives-sakura-tee 200 in 84ms
+ ✓ Compiled /checkout in 173ms (276 modules)
+ GET /contact 200 in 89ms
+ GET /faq 200 in 75ms
+ GET /account 200 in 119ms
+ GET /contact 200 in 47ms
+ GET /faq 200 in 82ms
+ GET /contact 200 in 63ms
