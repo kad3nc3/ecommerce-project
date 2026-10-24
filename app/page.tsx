@@ -5,8 +5,6 @@ import { ProductCard } from "./components";
 import { addProductToCart, changeCartQuantity, getCartStockIssues, getCartSubtotal, MAX_CART_SUBTOTAL, readCart, type CartState, writeCart } from "./cart";
 import { getTotalStock, getVariantStock, products } from "../products";
 
-const topBarPhrases = ["The art of everyday wear", "Meticulous fits", "Quiet details"];
-
 export default function Home() {
   const [cart, setCart] = useState<CartState>({});
   const [cartOpen, setCartOpen] = useState(false);
@@ -33,9 +31,6 @@ export default function Home() {
 
   return <main className="relative mx-auto min-h-screen max-w-[1440px] overflow-hidden bg-white px-[18px] pt-[14px] text-[#171b2e] sm:px-[42px] sm:pt-[22px]">
     <div className="pointer-events-none absolute -right-40 top-64 h-[400px] w-[400px] rounded-full bg-[#b1b8f7]/25 blur-sm" />
-    <div className="announcement-bar relative z-10 -mx-[18px] -mt-[14px] mb-[14px] overflow-hidden border-b border-white/10 bg-[#0d1420] py-3 text-[10px] font-semibold uppercase tracking-[.14em] sm:-mx-[42px] sm:-mt-[22px] sm:mb-[22px]">
-      <div className="marquee-mask"><div className="marquee-track">{[0, 1].map((repeat) => <div key={repeat} className="marquee-group" aria-hidden={repeat === 1}>{topBarPhrases.map((phrase) => <span key={phrase} className="shrink-0 whitespace-nowrap">{phrase}</span>)}</div>)}</div></div>
-    </div>
     <header className="glass-nav relative z-10 flex h-16 items-center justify-between rounded-[22px] px-3 pl-[18px]">
       <a className="flex items-center gap-2.5 text-[17px] font-bold tracking-[-.5px] text-[#171b2e]" href="#top"><span className="brand-icon grid h-7 w-7 place-items-center rounded-[10px]" /><span>archives</span></a>
       <nav className="hidden gap-8 text-[13px] text-[#171b2e]/75 sm:flex"><a className="transition-colors hover:text-[#171b2e]" href="#shop">Shop all</a><a className="transition-colors hover:text-[#171b2e]" href="/contact">Contact us</a><a className="transition-colors hover:text-[#171b2e]" href="/faq">FAQ</a></nav>

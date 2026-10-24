@@ -12,6 +12,12 @@ const socialLinks = [
 const initialForm = { name: "", email: "", phone: "", topic: "", message: "" };
 const contactEmail = "ossaslego@gmail.com";
 
+function SocialIcon({ name }: { name: string }) {
+  if (name === "Instagram") return <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7 fill-none stroke-current" strokeWidth="1.7"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4.25" /><circle cx="17.4" cy="6.7" r="1" className="fill-current stroke-none" /></svg>;
+  if (name === "Facebook") return <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7 fill-current"><path d="M13.5 22v-9h3l.5-3.5h-3.5V7.25c0-1.01.28-1.7 1.75-1.7H17V2.42c-.3-.04-1.34-.13-2.55-.13-2.52 0-4.25 1.54-4.25 4.37V9.5H7.35V13h2.85v9h3.3Z" /></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4v10.25a4.25 4.25 0 1 1-3-4.06" /><path d="M14 4c.45 2.5 2 4 5 4.5" /></svg>;
+}
+
 export default function ContactPage() {
   const [form, setForm] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
@@ -66,7 +72,7 @@ export default function ContactPage() {
         </div>
 
         <div data-reveal className="reveal mt-5 grid gap-5 sm:grid-cols-3" style={{ "--reveal-delay": "180ms" } as React.CSSProperties}>
-          {socialLinks.map((social, index) => <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="group rounded-[24px] border border-[#1e2341]/10 bg-white/60 p-7 transition duration-300 hover:-translate-y-1 hover:border-[#1e2341]/25 hover:bg-white"><div className="flex items-start justify-between"><span className="font-serif text-sm text-[#9da3d8]">0{index + 1}</span></div><h2 className="mt-10 text-2xl font-semibold tracking-[-1.2px]">{social.name}</h2><p className="mt-2 text-sm font-medium text-[#4f5466]">{social.handle}</p><p className="mt-4 text-sm leading-7 text-[#777c91]">{social.description}</p></a>)}
+          {socialLinks.map((social, index) => <a key={social.name} href={social.href} target="_blank" rel="noreferrer" aria-label={`Visit Archives on ${social.name}`} className="group rounded-[24px] border border-[#1e2341]/10 bg-white/60 p-7 transition duration-300 hover:-translate-y-1 hover:border-[#1e2341]/25 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#142541]/35"><div className="flex items-start justify-between"><span className="font-serif text-sm text-[#9da3d8]">0{index + 1}</span><span className="grid h-12 w-12 place-items-center rounded-[15px] border border-[#1e2341]/10 bg-[#faf9ee] text-[#142541] shadow-[0_8px_18px_rgba(20,37,65,.08)] transition duration-300 group-hover:scale-105 group-hover:bg-[#142541] group-hover:text-[#faf9ee]"><SocialIcon name={social.name} /></span></div><h2 className="mt-8 text-2xl font-semibold tracking-[-1.2px]">{social.name}</h2><p className="mt-2 text-sm font-medium text-[#4f5466]">{social.handle}</p><p className="mt-4 text-sm leading-7 text-[#777c91]">{social.description}</p></a>)}
         </div>
       </section>
     </main>
